@@ -7,31 +7,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.getElementById('prev');
 
   let currentIndex = 0;
+  const imageSources = Array.from(images).map(img => img.src);
 
   function showImage(index) {
-    lightboxImg.src = images[index].src;
     currentIndex = index;
+    lightboxImg.src = imageSources[currentIndex];
     lightbox.style.display = 'flex';
   }
 
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      showImage(index);
-    });
+  images.forEach((img, i) => {
+    img.addEventListener('click', () => showImage(i));
   });
 
   closeBtn.addEventListener('click', () => {
     lightbox.style.display = 'none';
   });
 
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage((currentIndex + 1) % imageSources.length);
   });
 
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage((currentIndex - 1 + imageSources.length) % imageSources.length);
   });
 
   lightbox.addEventListener('click', (e) => {
