@@ -1,22 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('.gallery-image');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeBtn = document.querySelector('.close');
-  const prevBtn = document.getElementById('prev');
   const nextBtn = document.getElementById('next');
-  const galleryImages = document.querySelectorAll('.gallery-image');
+  const prevBtn = document.getElementById('prev');
 
   let currentIndex = 0;
 
   function showImage(index) {
-    const img = galleryImages[index];
-    lightboxImg.src = img.getAttribute('data-large');
-    lightboxImg.alt = img.alt;
-    lightbox.style.display = 'flex';
+    lightboxImg.src = images[index].src;
     currentIndex = index;
+    lightbox.style.display = 'flex';
   }
 
-  galleryImages.forEach((img, index) => {
+  images.forEach((img, index) => {
     img.addEventListener('click', () => {
       showImage(index);
     });
@@ -24,26 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeBtn.addEventListener('click', () => {
     lightbox.style.display = 'none';
-    lightboxImg.src = '';
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
   });
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.style.display = 'none';
-      lightboxImg.src = '';
     }
   });
-
-  prevBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    showImage(currentIndex);
-  });
-
-  nextBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    showImage(currentIndex);
-  });
 });
-
