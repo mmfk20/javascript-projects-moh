@@ -2,25 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Test Lightbox</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Simple Image Slideshow</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #slideshow-container {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+    }
+    #slideshow-image {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+    .nav-btn {
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+    .nav-btn:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Test Gallery</h1>
+  <h1>Simple Image Slideshow</h1>
 
-  <div class="gallery">
-    <img src="images/img1_thumb.jpg" data-large="images/img1_large.jpg" alt="Image 1" class="gallery-image" />
-    <img src="images/img2_thumb.jpg" data-large="images/img2_large.jpg" alt="Image 2" class="gallery-image" />
+  <div id="slideshow-container">
+    <img id="slideshow-image" src="images/img1_large.jpg" alt="Slideshow Image" />
   </div>
 
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <button id="prev" class="nav-btn">&#10094;</button>
-    <img id="lightbox-img" src="" alt="Large View" />
-    <button id="next" class="nav-btn">&#10095;</button>
-  </div>
+  <button id="prev" class="nav-btn">Previous</button>
+  <button id="next" class="nav-btn">Next</button>
 
-  <script src="JS/one_page_website.js"></script>
+  <script>
+    const images = [
+      "images/img1_large.jpg",
+      "images/img2_large.jpg",
+      "images/img3_large.jpg",
+      "images/img4_large.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById('slideshow-image');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+
+    function showImage(index) {
+      currentIndex = index;
+      slideshowImage.src = images[currentIndex];
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+  </script>
+
 </body>
 </html>
