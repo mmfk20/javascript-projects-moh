@@ -1,8 +1,11 @@
-one-page-website/
-├── index.html
-├── style.css
-└── images/
-    ├── image1.jpg
-    ├── image1-thumb.jpg
-    ├── image2.jpg
-    └── image2-thumb.jpg
+One-Page Website/
+├── one_page_website.html
+├── JS/
+│   └── one_page_website.js
+├── images/
+│   ├── img1_thumb.jpg
+│   ├── img1_large.jpg
+│   ├── img2_thumb.jpg
+│   ├── img2_large.jpg
+└── css/
+    └── styles.css
