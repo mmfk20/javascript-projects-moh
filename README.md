@@ -1,13 +1,3 @@
 # javascript-projects-moh
 This repository contains all the JavaScript assignments and challenges from my course.
-One-Page Website/
-├── one_page_website.html
-├── JS/
-│   └── one_page_website.js
-├── images/
-│   ├── img1_thumb.jpg
-│   ├── img1_large.jpg
-│   ├── img2_thumb.jpg
-│   ├── img2_large.jpg
-└── css/
-    └── styles.css
+
