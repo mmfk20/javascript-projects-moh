@@ -3,24 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <title>JavaScript Projects</title>
-  <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* Add this inside your <head> or in your style.css */
-    .summary {
-      background-color: #eef6fb;
-      padding: 15px 20px;
-      margin: 20px 0;
-      border-radius: 6px;
-      font-size: 1.1em;
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
     }
-
-    .summary a {
+    header h1 {
+      margin-bottom: 0.2em;
+    }
+    .project-summary {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .project-summary h2 {
+      margin-top: 0;
+    }
+    .project-summary a {
       color: #007acc;
       text-decoration: none;
       font-weight: bold;
     }
-
-    .summary a:hover {
+    .project-summary a:hover {
       text-decoration: underline;
     }
   </style>
@@ -29,32 +40,16 @@
 
   <header>
     <h1>JavaScript Projects</h1>
-    <p>These are some small projects made using Javascript</p>
+    <p>These are some small projects made using JavaScript.</p>
   </header>
 
-  <section class="summary">
-    <p>This is the projects I made using JavaScript.</p>
-    <p>
-      Visit my full project collection here: 
-      <a href="https://mmfk20.github.io/javascript-projects-moh/" target="_blank" rel="noopener noreferrer">View My Projects</a>
-    </p>
-  </section>
+  <div class="project-summary">
+    <p>This is the collection of projects I made using JavaScript. Explore the projects below. Each link takes you to a live working demo.</p>
 
-  <!-- Your gallery and other content below -->
-  <div class="gallery">
-    <img src="images/img1.jpg" class="gallery-image" alt="Image 1" />
-    <img src="images/img2.jpg" class="gallery-image" alt="Image 2" />
-    <img src="images/img3.jpg" class="gallery-image" alt="Image 3" />
-    <img src="images/img4.jpg" class="gallery-image" alt="Image 4" />
+    <h2>📸 Lightbox Image Gallery</h2>
+    <p>A simple image gallery using JavaScript with a modal/lightbox feature.</p>
+    <a href="gallery.html" target="_blank" rel="noopener noreferrer">🔗 View Project</a>
   </div>
 
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <button id="prev">&#10094;</button>
-    <img id="lightbox-img" src="" alt="Slideshow Image" />
-    <button id="next">&#10095;</button>
-  </div>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
