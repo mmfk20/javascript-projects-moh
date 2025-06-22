@@ -3,41 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <title>JavaScript Projects</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      background-color: #f7f7f7;
-    }
-    h1 {
-      color: #333;
-    }
-    .project {
-      background: #fff;
-      margin: 15px 0;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>JavaScript Projects</h1>
-  <p>This is the collection of projects I made using JavaScript.</p>
 
-  <div class="project">
-    <h2>📸 Lightbox Gallery</h2>
-    <p>A gallery with lightbox modal functionality.</p>
-    <a href="lightbox-gallery/" target="_blank">View Project</a>
+  <header>
+    <h1>JavaScript Projects</h1>
+    <p>These are some small projects made using Javascript</p>
+  </header>
+
+  <!-- Your gallery and other content below -->
+  <div class="gallery">
+    <img src="images/img1.jpg" class="gallery-image" alt="Image 1" />
+    <img src="images/img2.jpg" class="gallery-image" alt="Image 2" />
+    <img src="images/img3.jpg" class="gallery-image" alt="Image 3" />
+    <img src="images/img4.jpg" class="gallery-image" alt="Image 4" />
   </div>
 
- 
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <button id="prev">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Slideshow Image" />
+    <button id="next">&#10095;</button>
+  </div>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
