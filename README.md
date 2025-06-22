@@ -11,17 +11,6 @@ A simple image gallery using JavaScript with a modal/lightbox feature.
 
 ---
 
-### 🎲 Dice Roller  
-Simulates rolling a die with a button click.  
-🔗 [View Project](https://mmfk20.github.io/javascript-projects-moh/dice-roller/)
-
----
-
-### ⏰ Digital Clock  
-A real-time digital clock using JavaScript.  
-🔗 [View Project](https://mmfk20.github.io/javascript-projects-moh/digital-clock/)
-
----
 
 ### More projects coming soon...
 
