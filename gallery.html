@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lightbox Image Gallery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Lightbox Image Gallery</h1>
+  </header>
+
+  <div class="gallery">
+    <img src="images/img1.jpg" class="gallery-image" alt="Image 1" />
+    <img src="images/img2.jpg" class="gallery-image" alt="Image 2" />
+    <img src="images/img3.jpg" class="gallery-image" alt="Image 3" />
+    <img src="images/img4.jpg" class="gallery-image" alt="Image 4" />
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <button id="prev">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Slideshow Image" />
+    <button id="next">&#10095;</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
